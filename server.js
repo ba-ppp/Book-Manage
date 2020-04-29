@@ -37,6 +37,12 @@ app.get("/books/update/:id", (req, res) => {
     });
   })
 
+app.get('/books/delete/:id', (req, res) => {
+  var id = req.params.id;
+  var rs = db.get('books').remove({id: id}).write();
+  res.redirect('/books');
+})
+
 app.post("/books/add", (req, res) => {
   var book = req.body;
   book.id = shortid.generate();
