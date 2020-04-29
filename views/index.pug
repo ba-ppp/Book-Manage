@@ -1,0 +1,24 @@
+h2 Books
+ul
+  each book in books
+    li
+      span Name:
+      span &nbsp
+      span= book.title
+      span &nbsp
+      a(href='/books/update/' + book.id) Update
+      span &nbsp
+      a(href="/books/delete/" + book.id) Delete
+      div
+        span Description:
+        span &nbsp
+        span= book.des
+  
+form(action="/books/add", method="POST")
+  label(for='title') Title
+  input(name="title")
+  div
+  label(for='des') Description
+  input(name="des")
+  div
+  button Add

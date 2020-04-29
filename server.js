@@ -5,28 +5,64 @@
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require("express");
 const app = express();
+var shortid = require("shortid");
+var bodyParser = require("body-parser");
+const low = require("lowdb");
+const FileSync = require("lowdb/adapters/FileSync");
 
-// our default array of dreams
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
+const adapter = new FileSync("db.json");
+const db = low(adapter);
 
-// make all the files in 'public' available
-// https://expressjs.com/en/starter/static-files.html
-app.use(express.static("public"));
+// Set some defaults
+db.defaults({ books: []}).write();
 
+app.set("view engine", "pug");
+app.set("views", "./views");
+
+app.use(bodyParser.urlencoded({ extended: false }))
+ 
+// parse application/json
+app.use(bodyParser.json())
 // https://expressjs.com/en/starter/basic-routing.html
-app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/views/index.html");
+app.get("/books", (request, response) => {
+  response.render("index", {
+    books: db.get("books").value()
+  });
 });
+app.get("/books/update/:id", (req, res) => {
+    var id = req.params.id;
+    var rs = db.get('books').find({id : id}).value();
+    res.render('update',{
+        book: rs
+    });
+  })
 
-// send the default array of dreams to the webpage
-app.get("/dreams", (request, response) => {
-  // express helps us take JS objects and send them as JSON
-  response.json(dreams);
-});
+app.get('/books/delete/:id', (req, res) => {
+  var id = req.params.id;
+  var rs = db.get('books').remove({id: id}).write();
+  res.redirect('/books');
+})
+
+app.post("/books/add", (req, res) => {
+  var book = req.body;
+  book.id = shortid.generate();
+  db.get("books").push(book).write();
+  res.redirect('/books');
+})
+
+
+app.post("/books/update/:id", (req, res) => {
+    var id = req.params.id;
+    var title = req.body.title;
+    var rs = db.get('books').find({id : id}).assign({title: title}).write();
+    res.redirect('/books');
+
+})
+  
+
+  
+  
+
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {
