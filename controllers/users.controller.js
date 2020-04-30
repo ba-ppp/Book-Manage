@@ -1,5 +1,5 @@
-var db = require('../db');
-var shortid = require('shortid');
+var db = require("../db");
+var shortid = require("shortid");
 
 module.exports.index = (req, res) => {
   res.render("users/index", {
@@ -35,6 +35,7 @@ module.exports.editPost = (req, res) => {
 module.exports.create = (req, res) => {
   var user = req.body;
   user.id = shortid.generate();
+
   db.get("users")
     .push(user)
     .write();

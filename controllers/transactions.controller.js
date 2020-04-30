@@ -31,8 +31,12 @@ module.exports.createPost = (req, res) => {
 }
 
 module.exports.complete = (req, res) => {
-  var id = req.params.id;
-  var trans = db.get('trans').find({id: id}).value();
+  var id = req.params.id
+  var trans = db.get('trans').find({id: id}).value()
+  if(!trans){
+    res.redirect('/transactions')
+    return;
+  }
   if(trans.isComplete === true)
     res.send('Done');
   else

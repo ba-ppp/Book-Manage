@@ -14,7 +14,17 @@
   "users": [
     {
       "id": "qwrsafas12",
-      "name": "Phuong"
+      "name": "Phuong",
+      "username": "xantinhct",
+      "email": "phuong@gmail.com",
+      "password": "123123"
+    },
+    {
+      "name": "Tran",
+      "id": "TBrxiONr-",
+      "username": "xantinh24ct",
+      "email": "tran@gmail.com",
+      "password": "123123"
     }
   ],
   "trans": [
@@ -22,7 +32,7 @@
       "id": "asd124xzc",
       "userId": "qwrsafas12",
       "bookId": "qwerasd12",
-      "isComplete": false
+      "isComplete": true
     }
   ]
 }

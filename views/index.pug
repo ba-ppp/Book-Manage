@@ -1,4 +1,4 @@
-extends ./layouts/common 
+extends ./layouts/common
 block content
     nav.navbar.navbar-expand-lg.navbar-light(style='background-color: #e3f2fd;')
         a.navbar-brand(href='#') Library
@@ -15,7 +15,7 @@ block content
                 li.nav-item
                     a.nav-link(href='/books') Books
                 li.nav-item
-                    a.nav-link(href='/transactions') Transactions
+                    a.nav-link(href='/transactions/' + id) Transactions
 
     
    
