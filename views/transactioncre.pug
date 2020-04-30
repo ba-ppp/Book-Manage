@@ -1,0 +1,10 @@
+h2 Create
+
+form(method="POST")
+  select(name="userName")
+    each user in users
+      option= user.name
+  select(name="bookName", mutiple)
+    each book in books
+      option= book.title
+  button Create

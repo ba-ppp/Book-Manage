@@ -13,8 +13,16 @@
   ],
   "users": [
     {
-      "name": "Phuong",
-      "id": "EycdObRaw"
+      "id": "qwrsafas12",
+      "name": "Phuong"
+    }
+  ],
+  "trans": [
+    {
+      "id": "asd124xzc",
+      "userId": "qwrsafas12",
+      "bookId": "qwerasd12",
+      "isComplete": false
     }
   ]
 }

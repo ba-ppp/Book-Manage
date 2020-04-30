@@ -1,45 +1,16 @@
 var express = require("express");
 var router = express.Router();
-var db = require("../db");
-var shortid = require("shortid");
-router.get("/", (req, res) => {
-  res.render("users", {
-    users: db.get("users").value()
-  });
-});
 
-router.get("/edit/:id", (req, res) => {
-  var id = req.params.id;
-  res.render("edit", {
-    id: id
-  });
-});
+var userCont = require('../controllers/users.controller')
 
-router.get("/delete/:id", (req, res) => {
-  var id = req.params.id;
-  db.get("users")
-    .remove({ id: id })
-    .write();
-  res.redirect("/users");
-});
+router.get("/",userCont.index);
 
-router.post("/edit/:id", (req, res) => {
-  var name = req.body.name;
-  var id = req.params.id;
-  db.get("users")
-    .find({ id: id })
-    .assign({ name: name })
-    .write();
-  res.redirect("/users");
-});
+router.get("/edit/:id", userCont.edit);
 
-router.post("/create", (req, res) => {
-  var user = req.body;
-  user.id = shortid.generate();
-  db.get("users")
-    .push(user)
-    .write();
-  res.redirect("/users");
-});
+router.get("/delete/:id", userCont.delete);
+
+router.post("/edit/:id", userCont.editPost);
+
+router.post("/create", userCont.create);
 
 module.exports = router;

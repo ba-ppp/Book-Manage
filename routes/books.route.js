@@ -1,40 +1,16 @@
 var express = require('express');
-var db = require('../db');
 var router = express.Router();
-var shortid = require('shortid');
+var bookContr = require('../controllers/books.controller');
 
-router.get("/", (request, response) => {
-  response.render("index", {
-    books: db.get("books").value()
-  });
-});
-router.get("/update/:id", (req, res) => {
-    var id = req.params.id;
-    var rs = db.get('books').find({id : id}).value();
-    res.render('update',{
-        book: rs
-    });
-});
+router.get("/", bookContr.index);
 
-router.get('/delete/:id', (req, res) => {
-  var id = req.params.id;
-  var rs = db.get('books').remove({id: id}).write();
-  res.redirect('/books');
-});
-router.post("/add", (req, res) => {
-  var book = req.body;
-  book.id = shortid.generate();
-  db.get("books").push(book).write();
-  res.redirect('/books');
-});
+router.get("/update/:id", bookContr.update);
+
+router.get('/delete/:id', bookContr.delete);
+
+router.post("/add", bookContr.addPost);
 
 
-router.post("/update/:id", (req, res) => {
-    var id = req.params.id;
-    var title = req.body.title;
-    var rs = db.get('books').find({id : id}).assign({title: title}).write();
-    res.redirect('/books');
-
-});
+router.post("/update/:id", bookContr.updatePost);
 
 module.exports = router;
