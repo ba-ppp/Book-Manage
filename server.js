@@ -23,13 +23,8 @@ app.use('/users',userRouter)
 app.use('/books',bookRouter);
 app.use('/transactions',tranRouter);
 
-app.get('/transactions/:id/complete', (req, res) =>{
-  var id = req.params.id;
-  var trans = db.get('trans').find({id: id}).value();
-  if(trans.isComplete === true)
-    res.send('Done');
-  else
-    res.send('Not Yet');
+app.get('/',(req, res) => {
+  res.render('index');
 })
 
 

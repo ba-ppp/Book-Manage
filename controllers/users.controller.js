@@ -2,14 +2,14 @@ var db = require('../db');
 var shortid = require('shortid');
 
 module.exports.index = (req, res) => {
-  res.render("users", {
+  res.render("users/index", {
     users: db.get("users").value()
   });
 };
 
 module.exports.edit = (req, res) => {
   var id = req.params.id;
-  res.render("edit", {
+  res.render("users/edit", {
     id: id
   });
 };

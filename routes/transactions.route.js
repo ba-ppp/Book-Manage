@@ -6,6 +6,8 @@ router.get("/", tranContr.index);
 
 router.get("/create", tranContr.create);
 
+router.get('/:id/complete',tranContr.complete);
+
 router.post("/create", tranContr.createPost);
 
 module.exports = router;

@@ -3,7 +3,7 @@ var shortid = require('shortid');
 
 module.exports.index = (req, res) => {
   
-  res.render('transaction',{
+  res.render('transactions/',{
     trans: db.get('trans').value(),
     users: db.get('users').value(),
     books: db.get('books').value()
@@ -11,7 +11,7 @@ module.exports.index = (req, res) => {
 };
 
 module.exports.create = (req, res) => {
-  res.render('transactioncre',{
+  res.render('transactions/create',{
     users: db.get('users').value(),
     books: db.get('books').value()
   })
@@ -28,4 +28,13 @@ module.exports.createPost = (req, res) => {
   rs.id = shortid.generate();
   db.get('trans').push(rs).write();
   res.redirect('/transactions')
+}
+
+module.exports.complete = (req, res) => {
+  var id = req.params.id;
+  var trans = db.get('trans').find({id: id}).value();
+  if(trans.isComplete === true)
+    res.send('Done');
+  else
+    res.send('Not Yet');
 }
