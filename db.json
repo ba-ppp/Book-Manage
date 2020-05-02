@@ -1,14 +1,538 @@
 {
   "books": [
     {
-      "id": "qwerasd12",
-      "title": "Doraemon",
-      "des": "funny, famous, for kids"
+      "id": "4d3a7287-100b-4fca-adc5-e94bed26e43a",
+      "title": "Limelight",
+      "des": "Isoodon obesulus"
     },
     {
-      "id": "cxbafqwer2",
-      "title": "CodersX",
-      "des": "for developers, knowledge"
+      "id": "d8320fb6-ede7-4e2e-bcbd-0d56f69cdf87",
+      "title": "Brony Tale, A",
+      "des": "Ephippiorhynchus mycteria"
+    },
+    {
+      "id": "a4c74f08-baba-4de7-99cc-45f645006561",
+      "title": "Beautiful Ohio",
+      "des": "Callorhinus ursinus"
+    },
+    {
+      "id": "bd720583-6f6d-4cc6-ac76-4363aa7b7f47",
+      "title": "Babylon 5",
+      "des": "Bassariscus astutus"
+    },
+    {
+      "id": "13a3e9c9-40d9-4b04-8f41-d3487140afe0",
+      "title": "Coronado",
+      "des": "Corvus albicollis"
+    },
+    {
+      "id": "7294ae35-1fde-4f83-9b89-48cefc3f5f58",
+      "title": "Looking Forward",
+      "des": "Choloepus hoffmani"
+    },
+    {
+      "id": "f1a2f125-56ab-475e-9202-11c3a7eeeae2",
+      "title": "Name for Evil, A",
+      "des": "Tadorna tadorna"
+    },
+    {
+      "id": "7e4144b6-2774-4899-9b9e-54ea28ec5119",
+      "title": "Masked & Anonymous",
+      "des": "Dendrocitta vagabunda"
+    },
+    {
+      "id": "fca55f8b-fce5-4826-b553-c50471335919",
+      "title": "Shanghaied",
+      "des": "Xerus sp."
+    },
+    {
+      "id": "96c558fe-aca6-48b0-b37c-13247738a72f",
+      "title": "Liar, The (Valehtelija)",
+      "des": "Phoca vitulina"
+    },
+    {
+      "id": "d4a28e77-4390-48fb-b239-20a721f3b33f",
+      "title": "Death of Mr. Lazarescu, The (Moartea domnului Lazarescu)",
+      "des": "Propithecus verreauxi"
+    },
+    {
+      "id": "a50cf5d2-dac8-41c7-bcf6-36f1dff9bcbc",
+      "title": "Shanghai Gesture, The",
+      "des": "Acanthaster planci"
+    },
+    {
+      "id": "833742d2-a28d-4102-b423-734d54f846cd",
+      "title": "Illusion Of Blood",
+      "des": "Choriotis kori"
+    },
+    {
+      "id": "1499bf4b-5a6b-45b3-b94f-15847a5ad19f",
+      "title": "Psycho Beach Party",
+      "des": "Vulpes vulpes"
+    },
+    {
+      "id": "3775aa24-b9f4-4100-933e-cd159dffb805",
+      "title": "Road, Movie",
+      "des": "Spilogale gracilis"
+    },
+    {
+      "id": "970d006e-cf12-4c9c-a45b-db18c86c9a74",
+      "title": "Weight of Water, The",
+      "des": "Camelus dromedarius"
+    },
+    {
+      "id": "339b03d1-b814-4514-8a34-936f8d157819",
+      "title": "Mother (Mat)",
+      "des": "Plegadis falcinellus"
+    },
+    {
+      "id": "f9406036-d53e-4307-8cf6-d35597a5dcbd",
+      "title": "Heavy",
+      "des": "Agkistrodon piscivorus"
+    },
+    {
+      "id": "06529a0c-e5b2-4c9c-ae67-43f8d47fa0a5",
+      "title": "Butchered",
+      "des": "Odocoileus hemionus"
+    },
+    {
+      "id": "ded45011-7c97-4a5d-802d-aba76892847a",
+      "title": "Disfigured",
+      "des": "Bison bison"
+    },
+    {
+      "id": "30784c28-a5e4-47c8-bb51-63ec40f5dd4b",
+      "title": "Loved One, The",
+      "des": "Geochelone elephantopus"
+    },
+    {
+      "id": "c3f008b5-27bf-46a6-bdf1-87dccae8599b",
+      "title": "Hunchback of Notre Dame, The",
+      "des": "Sceloporus magister"
+    },
+    {
+      "id": "2a3fdf65-be78-43da-ae99-76d5ef91185d",
+      "title": "Hugo",
+      "des": "Leptoptilus dubius"
+    },
+    {
+      "id": "94530654-8010-4928-8dbf-dab12ca5c80c",
+      "title": "Pure",
+      "des": "Crotalus cerastes"
+    },
+    {
+      "id": "dbe4de64-77c2-46cb-9967-28fab5ba6241",
+      "title": "Night Has a Thousand Eyes",
+      "des": "Galago crassicaudataus"
+    },
+    {
+      "id": "53f55a22-d78f-4020-aad0-f093ea12a7f5",
+      "title": "Ghosts... of the Civil Dead",
+      "des": "Hippopotamus amphibius"
+    },
+    {
+      "id": "d6546c0e-3b28-4321-a610-0ab76e941dbd",
+      "title": "I Married a Monster from Outer Space",
+      "des": "Dacelo novaeguineae"
+    },
+    {
+      "id": "8a060b5a-421c-4f33-a1e8-0af39dc328a8",
+      "title": "Not Love, Just Frenzy (Más que amor, frenesí)",
+      "des": "Anser caerulescens"
+    },
+    {
+      "id": "5b745b42-cb24-444d-90ef-4c764ce878ee",
+      "title": "Princess and the Goblin, The",
+      "des": "Lycaon pictus"
+    },
+    {
+      "id": "8167362b-36f5-4359-a060-dbd20a996bf8",
+      "title": "Myriad of Lights (Lights of Ten Thousand Homes, The) (Wanjia denghuo)",
+      "des": "Phalaropus lobatus"
+    },
+    {
+      "id": "7edd39f7-4d36-4f35-bf04-67df90f7223b",
+      "title": "Magnificent Obsession",
+      "des": "Ciconia ciconia"
+    },
+    {
+      "id": "6243a5f3-e322-482d-89b4-aad01b418db1",
+      "title": "Through the Forest",
+      "des": "Meleagris gallopavo"
+    },
+    {
+      "id": "56f31fcc-d3c8-4eb3-b679-7174608e7c3c",
+      "title": "Medicine for Melancholy",
+      "des": "Vombatus ursinus"
+    },
+    {
+      "id": "bef7b8e4-96d7-4acd-b33a-8e9d008d08ef",
+      "title": "Tales from the Crypt Presents: Bordello of Blood",
+      "des": "Kobus defassa"
+    },
+    {
+      "id": "223ae4d7-ca64-4cde-a220-e7dcbe674ec0",
+      "title": "Thank You, Jeeves!",
+      "des": "Hippopotamus amphibius"
+    },
+    {
+      "id": "23ec7301-0ba0-42af-8577-e16cccedee09",
+      "title": "Middle of the World, The (O Caminho das Nuvens)",
+      "des": "Hystrix cristata"
+    },
+    {
+      "id": "f237f4d5-c896-4b6e-a563-fed2adf2d72b",
+      "title": "Easy A",
+      "des": "Papio cynocephalus"
+    },
+    {
+      "id": "37234a3c-6101-4390-b228-69053b213ac0",
+      "title": "Run for Cover",
+      "des": "Tragelaphus strepsiceros"
+    },
+    {
+      "id": "fbe5208b-36c2-4b92-b790-0d3e13e244a0",
+      "title": "Tokyo Godfathers",
+      "des": "Spermophilus lateralis"
+    },
+    {
+      "id": "22f4812d-06f4-446d-947f-7f61b264491b",
+      "title": "Dry Cleaning (Nettoyage à sec)",
+      "des": "Colobus guerza"
+    },
+    {
+      "id": "5177ad70-ca21-4ef2-918d-df50741107d7",
+      "title": "Hollow Man II",
+      "des": "Geochelone elegans"
+    },
+    {
+      "id": "fee59644-4ca1-451f-9828-a20ace15b2c5",
+      "title": "8 1/2 (8½)",
+      "des": "Manouria emys"
+    },
+    {
+      "id": "7e923da8-5812-4f60-b8e2-09480161eff2",
+      "title": "Win Win",
+      "des": "Ardea golieth"
+    },
+    {
+      "id": "c00f17d8-f2d8-4a63-b63d-d69ba6642fd3",
+      "title": "Inquisitor, The (a.k.a. Under Suspicion) (Garde à vue)",
+      "des": "Papio cynocephalus"
+    },
+    {
+      "id": "c04fb0ac-7232-4e9a-a896-352f3841acc4",
+      "title": "Bounty Hunter, The",
+      "des": "Parus atricapillus"
+    },
+    {
+      "id": "f8ea8479-9f21-4e5d-8289-7e007812ce02",
+      "title": "Simon",
+      "des": "Ateles paniscus"
+    },
+    {
+      "id": "6f250283-a803-48b1-a41c-2a4abcf20870",
+      "title": "Friday the 13th Part VII: The New Blood",
+      "des": "Geochelone radiata"
+    },
+    {
+      "id": "4f0493a6-e248-4f73-852f-f19d9822838a",
+      "title": "Chinese Puzzle (Casse-tête chinois)",
+      "des": "Buteo jamaicensis"
+    },
+    {
+      "id": "e24fa3c4-2bcb-4a2c-84c4-13b59f4d67fd",
+      "title": "Ice-Cold in Alex",
+      "des": "Grus rubicundus"
+    },
+    {
+      "id": "c25fdb55-d170-4149-b760-7429f7f77867",
+      "title": "Fistful of Dollars, A (Per un pugno di dollari)",
+      "des": "Felis caracal"
+    },
+    {
+      "id": "f843d456-daaa-46bb-98a7-f30cf119c406",
+      "title": "Gamer",
+      "des": "unavailable"
+    },
+    {
+      "id": "d010a087-d863-4353-b6e8-ba967c645878",
+      "title": "Mon oncle d'Amérique",
+      "des": "Rhea americana"
+    },
+    {
+      "id": "8cddee92-3f06-48c1-99dc-cd4c895d49d9",
+      "title": "Effect of Gamma Rays on Man-in-the-Moon Marigolds, The",
+      "des": "Funambulus pennati"
+    },
+    {
+      "id": "432ec88e-633e-4a6b-b63b-3b3782063f2d",
+      "title": "Stigmata",
+      "des": "Anser caerulescens"
+    },
+    {
+      "id": "b5caf482-b170-4c63-8527-29e70958d267",
+      "title": "Anastasia",
+      "des": "Ciconia ciconia"
+    },
+    {
+      "id": "56ff33ce-5764-4228-b0a6-ed2ea356d5cb",
+      "title": "Irma la Douce",
+      "des": "Felis silvestris lybica"
+    },
+    {
+      "id": "881e9de5-6212-44d3-96af-4d641411aaf8",
+      "title": "Any Wednesday (Bachelor Girl Apartment)",
+      "des": "Ratufa indica"
+    },
+    {
+      "id": "b07837a2-93d1-432f-9c64-e69cded0f6ff",
+      "title": "Off Limits",
+      "des": "Bubalus arnee"
+    },
+    {
+      "id": "871acc4d-ed52-4dca-9983-da1ee6f76009",
+      "title": "Focus",
+      "des": "Cervus elaphus"
+    },
+    {
+      "id": "d08588f4-5b3c-4666-999d-ceef4227c375",
+      "title": "Round Up, The (La Rafle)",
+      "des": "Papio ursinus"
+    },
+    {
+      "id": "ef7d8309-a631-4032-8244-32869af25b31",
+      "title": "Steel",
+      "des": "Butorides striatus"
+    },
+    {
+      "id": "c698e45c-7f25-428a-a273-624c60e070e5",
+      "title": "Tokyo Fist (Tokyo ken)",
+      "des": "Acrobates pygmaeus"
+    },
+    {
+      "id": "491a0657-3507-4f0e-8647-9b637d328813",
+      "title": "D3: The Mighty Ducks",
+      "des": "Cynictis penicillata"
+    },
+    {
+      "id": "35b48147-30e2-43b4-9b0d-2fde7ad7f2a3",
+      "title": "Wasteland",
+      "des": "Coluber constrictor foxii"
+    },
+    {
+      "id": "851a2592-4eba-4c73-b0ca-737446d63663",
+      "title": "Wittgenstein",
+      "des": "Trachyphonus vaillantii"
+    },
+    {
+      "id": "5572f00b-4a71-4dde-8322-7c689759bb54",
+      "title": "Rififi (Du rififi chez les hommes)",
+      "des": "unavailable"
+    },
+    {
+      "id": "04bb6635-9322-4d9f-b3f2-33c3e00abbf5",
+      "title": "Holy Guests (Ha-Ushpizin)",
+      "des": "Bubulcus ibis"
+    },
+    {
+      "id": "866c39f5-322e-4d79-b8cb-a3321ce21bad",
+      "title": "Repast (Meshi)",
+      "des": "Macropus fuliginosus"
+    },
+    {
+      "id": "1ae7d774-f90e-4e8b-ae2e-c4a94af7fba5",
+      "title": "Wilde",
+      "des": "Suricata suricatta"
+    },
+    {
+      "id": "23ace672-2981-4d47-8698-78d0f46bb49b",
+      "title": "Run, Simon, Run",
+      "des": "Tayassu tajacu"
+    },
+    {
+      "id": "62bf66e0-9bcb-4f67-8f54-7f392cd87a01",
+      "title": "Gasht-e ershad",
+      "des": "Francolinus coqui"
+    },
+    {
+      "id": "c069e06c-6a98-4237-b99e-bfce219aa0ac",
+      "title": "Where the Red Fern Grows",
+      "des": "Propithecus verreauxi"
+    },
+    {
+      "id": "a69e4500-f25b-4aae-b846-72aad8657232",
+      "title": "I aionia epistrofi tou Antoni Paraskeva",
+      "des": "Anathana ellioti"
+    },
+    {
+      "id": "4e74f638-9b55-45ee-b4fb-4eeb26450111",
+      "title": "D.C.H. (Dil Chahta Hai)",
+      "des": "Phascogale tapoatafa"
+    },
+    {
+      "id": "e9c69e1c-c69c-4c74-89fa-8cd763bd272b",
+      "title": "Black Orchid, The",
+      "des": "Anastomus oscitans"
+    },
+    {
+      "id": "4280e729-a3d1-4a99-a336-464658f5f409",
+      "title": "King Is Alive, The",
+      "des": "Vanellus armatus"
+    },
+    {
+      "id": "4122e1ee-e53a-43eb-820c-201a34ab7c97",
+      "title": "Pauline & Paulette (Pauline en Paulette)",
+      "des": "Hymenolaimus malacorhynchus"
+    },
+    {
+      "id": "dbce982c-7047-4f67-b166-de664da53be0",
+      "title": "Blind Fury",
+      "des": "Panthera pardus"
+    },
+    {
+      "id": "24126478-fd0c-4dc7-bc54-d43461bf0273",
+      "title": "Century of the Self, The",
+      "des": "Amblyrhynchus cristatus"
+    },
+    {
+      "id": "4044ee49-11d7-45e0-acf0-00a6092dac28",
+      "title": "Short Time",
+      "des": "Ploceus intermedius"
+    },
+    {
+      "id": "3fc1c9b8-c953-4791-a9d4-cc8beaf8f185",
+      "title": "Georgy Girl",
+      "des": "Felis serval"
+    },
+    {
+      "id": "27ffa626-9e4f-46d5-932b-c83a46221f04",
+      "title": "Shed No Tears (Känn ingen sorg)",
+      "des": "Galago crassicaudataus"
+    },
+    {
+      "id": "d2240b3d-3c1d-452a-b10d-790eb45c4f4e",
+      "title": "Toe to Toe",
+      "des": "Macropus fuliginosus"
+    },
+    {
+      "id": "9e2df3f4-7098-40d9-8fda-62bc7382bae3",
+      "title": "Brice Man, The (Brice de Nice)",
+      "des": "Sceloporus magister"
+    },
+    {
+      "id": "b96b0993-0d38-4930-9a3d-4082785fbc33",
+      "title": "It's in the Water",
+      "des": "Tamiasciurus hudsonicus"
+    },
+    {
+      "id": "6c610c44-815b-4197-9197-804e6e38c4e2",
+      "title": "New Waterford Girl",
+      "des": "Butorides striatus"
+    },
+    {
+      "id": "c6686bc6-376c-4211-a928-ddf520ab1e35",
+      "title": "Layer Cake",
+      "des": "Anitibyx armatus"
+    },
+    {
+      "id": "48bc4d5f-8e61-44dd-a082-f521c6da7672",
+      "title": "Love at First Bite",
+      "des": "Columba livia"
+    },
+    {
+      "id": "bcb7ffe2-5dad-4dbb-9f31-68a57c372ef8",
+      "title": "Jeremiah Johnson",
+      "des": "Sarkidornis melanotos"
+    },
+    {
+      "id": "ba3dc387-d28b-49ef-ae50-dbd22911bfd8",
+      "title": "Herbie Goes Bananas",
+      "des": "Hystrix indica"
+    },
+    {
+      "id": "ffef2a68-ca43-41e5-9436-5250be82b06b",
+      "title": "Memory Keeper's Daughter, The",
+      "des": "Bucephala clangula"
+    },
+    {
+      "id": "9f0eacc1-ba91-45f8-b52f-d2b8b897c5a8",
+      "title": "Anatahan",
+      "des": "Castor canadensis"
+    },
+    {
+      "id": "61fd940e-1a91-48ee-9831-991b198502c9",
+      "title": "Gone Girl",
+      "des": "Halcyon smyrnesis"
+    },
+    {
+      "id": "a1f5b578-8fcf-4673-82ce-4dec922232bb",
+      "title": "Comme les 5 doigts de la main",
+      "des": "Anastomus oscitans"
+    },
+    {
+      "id": "72cdd4b0-3891-4c46-8eaf-7bc6041a7a61",
+      "title": "Comic-Con Episode IV: A Fan's Hope",
+      "des": "Anathana ellioti"
+    },
+    {
+      "id": "d639ce5c-7127-4de9-b2af-61c7ecec2e03",
+      "title": "Children Shouldn't Play with Dead Things",
+      "des": "Psophia viridis"
+    },
+    {
+      "id": "96634555-ec24-4499-9853-849f7ee28cc4",
+      "title": "Mockingbird Don't Sing",
+      "des": "Odocoileus hemionus"
+    },
+    {
+      "id": "1625dcf5-7626-4625-8ac9-73409cc65758",
+      "title": "Babes on Broadway",
+      "des": "Milvago chimachima"
+    },
+    {
+      "id": "9b979c1d-e564-44e7-92ac-345f260309be",
+      "title": "Poughkeepsie Tapes, The",
+      "des": "Eumetopias jubatus"
+    },
+    {
+      "id": "dbdc95c0-d2b1-408b-822a-931a2328c307",
+      "title": "Karate Kid, The",
+      "des": "Marmota flaviventris"
+    }
+  ],
+  "users": [
+    {
+      "id": "qwrsafas12",
+      "name": "Phuong",
+      "username": "xantinhct",
+      "email": "phuong@gmail.com",
+      "password": "$2b$12$tw3zJAJCTgoSZgv1juJCXecDv2DRgjxX82H4XwlxUWV0SwzzBMpbm",
+      "isAdmin": true,
+      "wrongLogin": 0
+    },
+    {
+      "name": "Tran",
+      "id": "TBrxiONr-",
+      "username": "xantinh24ct",
+      "email": "tran@gmail.com",
+      "password": "$2b$12$tw3zJAJCTgoSZgv1juJCXecDv2DRgjxX82H4XwlxUWV0SwzzBMpbm",
+      "isAdmin": false,
+      "wrongLogin": 0
+    }
+  ],
+  "trans": [
+    {
+      "id": "asd124xzc",
+      "userId": "qwrsafas12",
+      "bookId": "4d3a7287-100b-4fca-adc5-e94bed26e43a",
+      "isComplete": true
+    },
+    {
+      "id": "aas-Dmksa2",
+      "userId": "TBrxiONr-",
+      "bookId": "9b979c1d-e564-44e7-92ac-345f260309be",
+      "isComplete": false
     }
   ]
 }

@@ -1,0 +1,11 @@
+extends ../layouts/common 
+block content
+
+  h2 Profile
+
+  span=user.name
+  span &nbsp
+  span
+    img.rounded-circle(src=user.avatar , width ='250px')
+  span
+    a(href=('/profile/' + user.id +'/update')) Update

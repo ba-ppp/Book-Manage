@@ -1,0 +1,20 @@
+extends ../layouts/common 
+block content
+
+  h2 Transaction
+
+  table.table
+      tr
+        th Users &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+        th Books  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        th Completed
+        
+    tdbody 
+      tr
+            td= users.name
+            span &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            td= books.title
+            span &nbsp&nbsp&nbsp
+            td 
+              a(href= '/transactions/' + id + '/complete') Completed

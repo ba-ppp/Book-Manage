@@ -1,24 +1,26 @@
-h2 Books
-ul
-  each book in books
-    li
-      span Name:
-      span &nbsp
-      span= book.title
-      span &nbsp
-      a(href='/books/update/' + book.id) Update
-      span &nbsp
-      a(href="/books/delete/" + book.id) Delete
-      div
-        span Description:
-        span &nbsp
-        span= book.des
-  
-form(action="/books/add", method="POST")
-  label(for='title') Title
-  input(name="title")
-  div
-  label(for='des') Description
-  input(name="des")
-  div
-  button Add
+extends ./layouts/common
+block content
+    nav.navbar.navbar-expand-lg.navbar-light(style='background-color: #e3f2fd;')
+        a.navbar-brand(href='#') Library
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav
+                li.nav-item.active
+                    a.nav-link(href='/')
+                        | Home 
+                        span.sr-only (current)
+                li.nav-item
+                    a.nav-link(href='/users') Users
+                li.nav-item
+                    a.nav-link(href='/books') Books
+                li.nav-item
+                    a.nav-link(href='/transactions/' + id) Transactions
+                li.nav-item
+                    a.nav-link(href='/profile/' + id) Profile  
+
+    
+   
+
+
+
