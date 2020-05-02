@@ -1,10 +1,12 @@
 var db = require('../db');
 var shortid = require('shortid');
 
-module.exports.index = (request, response) => {
-  response.render("books/index", {
-    books: db.get("books").value()
-  });
+module.exports.index = (req, res) => {
+  var page = req.query.page || 1;
+  var perPage = 8;
+  res.render('books/index', {
+    books: db.get('books').drop((page - 1) * perPage).take(perPage).value()
+  })
 };
 module.exports.update = (req, res) => {
     var id = req.params.id;

@@ -19,7 +19,7 @@ module.exports.index = (req, res) => {
       users: db.get("users").value(),
       id: id,
       books: db.get("books").value(),
-      bookId: bookId
+      bookId: bookId,
     });
   } else {
     res.render("transactions/admin", {

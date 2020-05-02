@@ -8,12 +8,19 @@ const bcrypt = require("bcrypt");
 const app = express();
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
+var multer = require("multer");
+var cloudinary = require('cloudinary').v2
+
+var upload = multer({ dest: "./public/uploads/" });
 
 var userRouter = require("./routes/users.route");
 var bookRouter = require("./routes/books.route");
 var tranRouter = require("./routes/transactions.route");
 var authRouter = require("./routes/auth.route");
+var proRouter = require("./routes/pro.route");
 var authLogin = require("./middleware/auth.validate");
+
+
 
 app.set("view engine", "pug");
 app.set("views", "./views");
@@ -28,15 +35,14 @@ app.use("/users", authLogin.authLogin, userRouter);
 app.use("/books", authLogin.authLogin, bookRouter);
 app.use("/transactions", authLogin.authLogin, tranRouter);
 app.use("/auth", authRouter);
+app.use("/profile",proRouter);
 
 app.get("/", authLogin.authLogin, (req, res) => {
   res.render("index", {
-    id: req.cookies.userId
+    id: req.signedCookies.userId
   });
 });
 
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
-
-

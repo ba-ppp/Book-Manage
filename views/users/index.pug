@@ -15,5 +15,9 @@ block content
       
 
   form(action="/users/create", method= "POST")
-    input(name="name")
+    label(for='name') Name
+    input#name(name="name")
+  form(action="/users/create", method= "POST")
+    label(for='avatar') Avatar
+    input#avatar.form-control-file(name="avatar", type='file')
     button Create
