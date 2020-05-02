@@ -4,8 +4,8 @@
 // we've started you off with Express (https://expressjs.com/)
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require("express");
+const bcrypt = require("bcrypt");
 const app = express();
-
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 
@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(express.static("public"));
-app.use(cookieParser());
+app.use(cookieParser(process.env.SECRET_COOKIE));
 
 app.use("/users", authLogin.authLogin, userRouter);
 app.use("/books", authLogin.authLogin, bookRouter);
@@ -30,7 +30,7 @@ app.use("/transactions", authLogin.authLogin, tranRouter);
 app.use("/auth", authRouter);
 
 app.get("/", authLogin.authLogin, (req, res) => {
-  res.render("index",{
+  res.render("index", {
     id: req.cookies.userId
   });
 });
@@ -38,3 +38,5 @@ app.get("/", authLogin.authLogin, (req, res) => {
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
+
+

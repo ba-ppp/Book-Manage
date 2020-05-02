@@ -9,17 +9,12 @@ block content
 
         th Books  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         th Completed
-  each tran in trans
-        tr
-            td= users.find(x => x.id === tran.userId).name
+        
+        
+      tr
+            td= users.find(x => x.id === id).name
             span &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            td
-                - let listBook = tran.bookId
-                if(typeof tran.bookId === "string")
-                  span= books.find(x => x.id === tran.bookId).title
-                else
-                  each e in listBook
-                    span= books.find(x => x.id === tran.bookId).title
+            td= books.find(x => x.id === bookId).title
             span &nbsp&nbsp&nbsp
             td 
-              a(href="/transactions/" + tran.id + "/complete") Completed
+              a(href= '/transactions/' + id + '/complete') Completed

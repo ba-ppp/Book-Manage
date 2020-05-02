@@ -17,14 +17,18 @@
       "name": "Phuong",
       "username": "xantinhct",
       "email": "phuong@gmail.com",
-      "password": "123123"
+      "password": "$2b$12$tw3zJAJCTgoSZgv1juJCXecDv2DRgjxX82H4XwlxUWV0SwzzBMpbm",
+      "isAdmin": true,
+      "wrongLogin": 0
     },
     {
       "name": "Tran",
       "id": "TBrxiONr-",
       "username": "xantinh24ct",
       "email": "tran@gmail.com",
-      "password": "123123"
+      "password": "$2b$12$tw3zJAJCTgoSZgv1juJCXecDv2DRgjxX82H4XwlxUWV0SwzzBMpbm",
+      "isAdmin": false,
+      "wrongLogin": 0
     }
   ],
   "trans": [
@@ -33,6 +37,12 @@
       "userId": "qwrsafas12",
       "bookId": "qwerasd12",
       "isComplete": true
+    },
+    {
+      "id": "aas-Dmksa2",
+      "userId": "TBrxiONr-",
+      "bookId": "cxbafqwer2",
+      "isComplete": false
     }
   ]
 }

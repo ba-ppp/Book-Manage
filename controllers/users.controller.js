@@ -2,9 +2,18 @@ var db = require("../db");
 var shortid = require("shortid");
 
 module.exports.index = (req, res) => {
-  res.render("users/index", {
-    users: db.get("users").value()
-  });
+  var id = req.signedCookies.userId;
+  var user = db.get('users').find({id: id}).value();
+  if(user.isAdmin === true){
+    res.render('users/admin', {
+      users: db.get('users').value()
+    })
+  }else
+    {
+      res.render('users/index', {
+        users: user
+      })
+    }
 };
 
 module.exports.edit = (req, res) => {
