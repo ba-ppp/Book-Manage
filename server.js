@@ -3,15 +3,15 @@
 
 // we've started you off with Express (https://expressjs.com/)
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
+require("dotenv").config();
 const express = require("express");
 const bcrypt = require("bcrypt");
 const app = express();
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var multer = require("multer");
-var cloudinary = require('cloudinary').v2
-
-var upload = multer({ dest: "./public/uploads/" });
+var cloudinary = require("cloudinary").v2;
+var sessionMiddleware = require('./middleware/session.middleware');
 
 var userRouter = require("./routes/users.route");
 var bookRouter = require("./routes/books.route");
@@ -20,22 +20,25 @@ var authRouter = require("./routes/auth.route");
 var proRouter = require("./routes/pro.route");
 var authLogin = require("./middleware/auth.validate");
 
-
-
 app.set("view engine", "pug");
 app.set("views", "./views");
+
+app.use(express.static('public'));
+
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(express.static("public"));
 app.use(cookieParser(process.env.SECRET_COOKIE));
+app.use(sessionMiddleware);
 
 app.use("/users", authLogin.authLogin, userRouter);
-app.use("/books", authLogin.authLogin, bookRouter);
+app.use("/books", bookRouter);
 app.use("/transactions", authLogin.authLogin, tranRouter);
 app.use("/auth", authRouter);
-app.use("/profile",proRouter);
+app.use("/profile", proRouter);
 
 app.get("/", authLogin.authLogin, (req, res) => {
   res.render("index", {

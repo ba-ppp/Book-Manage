@@ -3,8 +3,8 @@ block content
   a(href='/users/' + user.id + '/profile') Back
   h3.pb-3 Avatar
   .d-flex.justify-content-center.pb-3
-    img.rounded-circle(src=avatar, width ='250px')
-  form(action='/users/update-avatar', enctype="multipart/form-data", method='POST')
+    img.rounded-circle(src= avatar, width ='250px')
+  form(action='/profile/update-avatar', enctype="multipart/form-data", method='POST')
     input.form-control(type="text", name="user_id", value=user.id, hidden)
     .form-group.row
       label.col-sm-3.col-form-label Change Avatar:
