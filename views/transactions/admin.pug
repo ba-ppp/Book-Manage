@@ -5,21 +5,12 @@ block content
 
   table.table
       tr
-        th Users &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
-        th Books  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        th Users
+        th Books
         th Completed
-  each tran in trans
-      tr
-            td= users.find(x => x.id === tran.userId).name
-            span &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            td
-                - let listBook = tran.bookId
-                if(typeof tran.bookId === "string")
-                  span= books.find(x => x.id === tran.bookId).title
-                else
-                  each e in listBook
-                    span= books.find(x => x.id === tran.bookId).title
-            span &nbsp&nbsp&nbsp
-            td 
-              a(href="/transactions/" + tran.id + "/complete") Completed
+      each tran in trans
+        tr
+          td= users.find(x => x.id === tran.userId).name
+          td= books.find(x => x.id === tran.bookId).title
+          td
+            a(href="/transactions/" + tran.id + "/complete") Completed

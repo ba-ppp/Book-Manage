@@ -1,25 +1,20 @@
 require('dotenv').config();
-var db = require("../db");
+var User = require('../models/user.model');
 const sgMail = require("@sendgrid/mail");
 const bcrypt = require("bcrypt");
 module.exports.login = (req, res) => {
   res.render("auth/login");
 };
 
-module.exports.postLogin = (req, res) => {
+module.exports.postLogin = async (req, res) => {
   var username = req.body.username;
   var password = req.body.password;
   var errors = [];
 
-  var userCheck = db
-    .get("users")
-    .find({ username: username })
-    .value();
+  var userCheck = await User.findOne({username: username});
+  console.log(userCheck);
   if (!userCheck) {
-    userCheck = db
-      .get("users")
-      .find({ email: username })
-      .value();
+    userCheck = await User.findOne({email: username});
   }
 
   var checkPass = bcrypt.compareSync(password, userCheck.password);
@@ -32,17 +27,8 @@ module.exports.postLogin = (req, res) => {
     errors.push("User not exsist");
   } else if (!checkPass) {
     errors.push("Wrong password");
-    var check = db
-      .get("users")
-      .find({ username: username })
-      .value();
-    if (!check) {
-      check = db
-        .get("users")
-        .find({ email: username })
-        .value();
-    }
-    var count = check.wrongLogin;
+    
+    var count = userCheck.wrongLogin;
     count++;
     if (count >= 4) {
       var er = [];
@@ -70,14 +56,8 @@ module.exports.postLogin = (req, res) => {
       );
       return;
     }
-    db.get("users")
-      .find({ username: username })
-      .assign({ wrongLogin: count })
-      .write();
-    db.get("users")
-      .find({ email: username })
-      .assign({ wrongLogin: count })
-      .write();
+    await User.findOneAndUpdate({username: username},{wrongLogin: count});
+    await User.findOneAndUpdate({email: username},{wrongLogin: count});
   }
 
   if (errors.length) {
@@ -97,12 +77,9 @@ module.exports.postLogin = (req, res) => {
     return;
   }
 
-  db.get("users")
-    .find({ id: userCheck.id })
-    .assign({ wrongLogin: 0 })
-    .write();
+  await User.findOneAndUpdate({_id: userCheck._id},{wrongLogin: 0});
 
-  res.cookie("userId", userCheck.id, {
+  res.cookie("userId", userCheck._id, {
     signed: true
   });
   res.render("index");

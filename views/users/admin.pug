@@ -15,7 +15,7 @@ block content
   form(action="/users/create", method= "POST")
     label(for='name') Name
     input(name="name")
-  form(action="/users/create", method= "POST")
-    label(for='avatar') Avatar
-    input#avatar.form-control-file(name="avatar", type='file', enctype='multipart/form-data')
-    button Create
+    form(action="/users/create", method= "POST")
+      label(for='avatar') Avatar
+      input#avatar.form-control-file(name="avatar", type='file', enctype='multipart/form-data')
+      button Create

@@ -11,6 +11,6 @@ router.get("/delete/:id", userCont.delete);
 
 router.post("/edit/:id", userCont.editPost);
 
-router.post("/create", validate.postCreate, userCont.create);
+router.post("/create", userCont.create);
 
 module.exports = router;

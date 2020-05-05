@@ -5,4 +5,7 @@ block content
 
   form(action="/users/edit/" + id, method= "POST")
     input(name="name")
+  form(action="/users/create", method= "POST")
+    label(for='avatar') Avatar
+    input#avatar.form-control-file(name="avatar", type='file')
     button Save

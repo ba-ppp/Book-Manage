@@ -1,12 +1,13 @@
-var db = require("../db");
-var shortid = require("shortid");
+var User = require('../models/user.model');
 
-module.exports.index = (req, res) => {
+
+module.exports.index = async (req, res) => {
   var id = req.signedCookies.userId;
-  var user = db.get('users').find({id: id}).value();
+  var user = await User.findOne({_id: '5eb1051b962c2d6db06d7739'});
+  var users = await User.find();
   if(user.isAdmin === true){
     res.render('users/admin', {
-      users: db.get('users').value()
+      users: users
     })
   }else
     {
@@ -23,30 +24,25 @@ module.exports.edit = (req, res) => {
   });
 };
 
-module.exports.delete = (req, res) => {
+module.exports.delete = async (req, res) => {
   var id = req.params.id;
-  db.get("users")
-    .remove({ id: id })
-    .write();
+  var user = await User.find();
+  await User.deleteOne({_id: id});
   res.redirect("/users");
 };
 
-module.exports.editPost = (req, res) => {
+module.exports.editPost = async (req, res) => {
   var name = req.body.name;
   var id = req.params.id;
-  db.get("users")
-    .find({ id: id })
-    .assign({ name: name })
-    .write();
+  await User.findOneAndUpdate({_id: id}, {name: name})
   res.redirect("/users");
 };
 
-module.exports.create = (req, res) => {
-  var user = req.body;
-  user.id = shortid.generate();
-
-  db.get("users")
-    .push(user)
-    .write();
+module.exports.create = async (req, res) => {
+  var name = req.body.name;
+  var user = {};
+  user.name = name;
+  await User.create(user);
   res.redirect("/users");
 };
+

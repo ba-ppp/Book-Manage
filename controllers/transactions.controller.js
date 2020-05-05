@@ -1,31 +1,27 @@
-var db = require("../db");
-var shortid = require("shortid");
-
-module.exports.index = (req, res) => {
+var Tran = require('../models/tran.model');
+var User = require('../models/user.model');
+var Book = require('../models/book.model');
+module.exports.index = async (req, res) => {
   var id = req.signedCookies.userId;
-  var users = db.get("users").value();
-  var user = db
-    .get("users")
-    .find({ id: id })
-    .value();
-  var trans = db
-    .get("trans")
-    .find({ userId: id })
-    .value();
+  var user = await User.findOne({_id: id});
+  var tran = await Tran.findOne({userId: id});
+  var users = await User.find();
+  console.log(users);
+  var books = await Book.find();
+  var trans = await Tran.find();
   if (user.isAdmin !== true) {
-    var bookId = trans.bookId;
-    var check = trans.isComplete;
+    var bookId = tran.bookId;
     res.render("transactions/", {
-      users: db.get("users").value(),
+      users: users,
       id: id,
-      books: db.get("books").value(),
+      books: books,
       bookId: bookId,
     });
   } else {
     res.render("transactions/admin", {
-      trans: db.get('trans').value(),
-      users: db.get('users').value(),
-      books: db.get('books').value()
+      trans: trans,
+      users: users,
+      books: books
     });
   }
 };

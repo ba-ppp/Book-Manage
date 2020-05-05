@@ -1,15 +1,12 @@
-// server.js
-// where your node app starts
-
-// we've started you off with Express (https://expressjs.com/)
-// but feel free to use whatever libraries or frameworks you'd like through `package.json`.
+require('dotenv').config();
 const express = require("express");
 const bcrypt = require("bcrypt");
 const app = express();
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var multer = require("multer");
-var cloudinary = require('cloudinary').v2
+var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGO_URL);
 
 var upload = multer({ dest: "./public/uploads/" });
 
@@ -28,8 +25,9 @@ app.set("views", "./views");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(express.static("public"));
 app.use(cookieParser(process.env.SECRET_COOKIE));
+app.use(express.static("public"));
+
 
 app.use("/users", authLogin.authLogin, userRouter);
 app.use("/books", authLogin.authLogin, bookRouter);
@@ -43,6 +41,6 @@ app.get("/", authLogin.authLogin, (req, res) => {
   });
 });
 
-const listener = app.listen(process.env.PORT, () => {
-  console.log("Your app is listening on port " + listener.address().port);
+const listener = app.listen(3000, () => {
+  console.log("Your app is listening on port " + 3000);
 });
