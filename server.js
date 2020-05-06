@@ -50,7 +50,8 @@ app.get('/', (req, res) => {
   res.sendFile('index.html');
 })
 
+var port = process.env.PORT || 3000;
 
-const listener = app.listen(3000, () => {
-  console.log("Your app is listening on port " + 3000);
+const listener = app.listen(port, () => {
+  console.log("Your app is listening on port " + port);
 });
