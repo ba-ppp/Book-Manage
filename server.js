@@ -38,11 +38,18 @@ app.use("/transactions", authLogin.authLogin, tranRouter);
 app.use("/auth", authRouter);
 app.use("/profile",proRouter);
 
-app.get("/", authLogin.authLogin, (req, res) => {
-  res.render("index", {
-    id: req.signedCookies.userId
-  });
-});
+app.use(express.static('./dist'));
+
+// app.get("/", authLogin.authLogin, (req, res) => {
+//   res.render("index", {
+//     id: req.signedCookies.userId
+//   });
+// });
+
+app.get('/', (req, res) => {
+  res.sendFile('index.html');
+})
+
 
 const listener = app.listen(3000, () => {
   console.log("Your app is listening on port " + 3000);

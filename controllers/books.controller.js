@@ -6,6 +6,7 @@ module.exports.index = async (req, res) => {
   // res.render('books/index', {
   //   books: db.get('books').drop((page - 1) * perPage).take(perPage).value()
   // })
+
   var books = await Book.find();
   res.render('books/index', {
     books: books
