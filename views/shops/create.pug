@@ -1,0 +1,8 @@
+extends ../layouts/common 
+block content
+
+    form(action="/shop/create", method= "POST")
+        label(for='name') Name
+        input(name="name")
+    
+    button Create

@@ -40,7 +40,7 @@ app.use("/profile",proRouter);
 
 
 
-app.get("/", (req, res) => {
+app.get("/", authLogin.authLogin, (req, res) => {
   res.render("index", {
     id: req.signedCookies.userId
   });
