@@ -32,9 +32,9 @@ app.use(express.static("public"));
 app.use('/api/login',loginApi);
 app.use('/api/transactions',tranApi);
 app.use('/api/books',bookApi);
-app.use("/users", authLogin.authLogin, userRouter);
-app.use("/books", authLogin.authLogin, bookRouter);
-app.use("/transactions", authLogin.authLogin, tranRouter);
+app.use("/users", userRouter);
+app.use("/books",  bookRouter);
+app.use("/transactions", tranRouter);
 app.use("/auth", authRouter);
 app.use("/profile",proRouter);
 

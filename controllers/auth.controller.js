@@ -7,6 +7,8 @@ module.exports.login = (req, res) => {
 };
 
 module.exports.postLogin = async (req, res) => {
+  var user = await User.find();
+  console.log(user);
   var username = req.body.username;
   var password = req.body.password;
   var errors = [];
