@@ -16,8 +16,9 @@ var tranRouter = require("./routes/transactions.route");
 var authRouter = require("./routes/auth.route");
 var proRouter = require("./routes/pro.route");
 var authLogin = require("./middleware/auth.validate");
-
-
+var loginApi = require('./api/routes/login.route');
+var tranApi = require('./api/routes/transactions.route');
+var bookApi = require('./api/routes/books.route');
 
 app.set("view engine", "pug");
 app.set("views", "./views");
@@ -28,7 +29,9 @@ app.use(bodyParser.json());
 app.use(cookieParser(process.env.SECRET_COOKIE));
 app.use(express.static("public"));
 
-
+app.use('/api/login',loginApi);
+app.use('/api/transactions',tranApi);
+app.use('/api/books',bookApi);
 app.use("/users", authLogin.authLogin, userRouter);
 app.use("/books", authLogin.authLogin, bookRouter);
 app.use("/transactions", authLogin.authLogin, tranRouter);

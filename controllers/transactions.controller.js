@@ -6,7 +6,6 @@ module.exports.index = async (req, res) => {
   var user = await User.findOne({_id: id});
   var tran = await Tran.findOne({userId: id});
   var users = await User.find();
-  console.log(users);
   var books = await Book.find();
   var trans = await Tran.find();
   if (user.isAdmin !== true) {
