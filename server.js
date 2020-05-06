@@ -38,17 +38,15 @@ app.use("/transactions", authLogin.authLogin, tranRouter);
 app.use("/auth", authRouter);
 app.use("/profile",proRouter);
 
-app.use(express.static('./dist'));
 
-// app.get("/", authLogin.authLogin, (req, res) => {
-//   res.render("index", {
-//     id: req.signedCookies.userId
-//   });
-// });
 
-app.get('/', (req, res) => {
-  res.render('index');
-})
+app.get("/", authLogin.authLogin, (req, res) => {
+  res.render("index", {
+    id: req.signedCookies.userId
+  });
+});
+
+
 
 var port = process.env.PORT || 3000;
 
