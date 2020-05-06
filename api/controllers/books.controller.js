@@ -11,7 +11,7 @@ module.exports.index = async (req, res) => {
 };
 module.exports.update =async (req, res) => {
     var id = req.params.id;
-    res.render('books/update',{
+    res.render('books/update_api',{
         id:id
     });
 };
@@ -19,13 +19,14 @@ module.exports.update =async (req, res) => {
 module.exports.delete = async (req, res) => {
   var id = req.params.id;
   await Book.findOneAndDelete({_id: id});
-  res.redirect('/books');
+  var book = Book.find();
+  res.json(book);
 };
 module.exports.addPost = (req, res) => {
   var book = req.body;
   
-  db.get("books").push(book).write();
-  res.redirect('/books');
+  Book.create(book);
+  res.json(books);
 };
 
 
@@ -35,6 +36,4 @@ module.exports.updatePost = async (req, res) => {
     await Book.findOneAndUpdate({_id: id}, {title: title});
     var books = await Book.find();
     res.json(books);
-
-
 };
