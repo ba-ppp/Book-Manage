@@ -3,19 +3,18 @@ block content
 
   h2 Shop
   ul
-    each book in books
+    each shop in shops
       li
         span Name:
+        span= books.find(x => x.id === shop.bookId).title
         span &nbsp
-        span= book.title
+        a(href='/books/update/' + shop.bookId) Update
         span &nbsp
-        a(href='/books/update/' + book.id) Update
-        span &nbsp
-        a(href='/books/delete/' + book.id) Delete
+        a(href='/books/delete/' + shop.bookId) Delete
         div
           span Description:
           span &nbsp
-          span= book.des
+          span= books.find(x => x.id === shop.bookId).des
 
   form(action="/books/add", method="POST")
     label(for='title') Title

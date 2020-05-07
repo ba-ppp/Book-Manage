@@ -19,6 +19,7 @@ var authLogin = require("./middleware/auth.validate");
 var loginApi = require('./api/routes/login.route');
 var tranApi = require('./api/routes/transactions.route');
 var bookApi = require('./api/routes/books.route');
+var shopRouter = require('./routes/shops.router');
 
 app.set("view engine", "pug");
 app.set("views", "./views");
@@ -37,6 +38,7 @@ app.use("/books",  bookRouter);
 app.use("/transactions", tranRouter);
 app.use("/auth", authRouter);
 app.use("/profile",proRouter);
+app.use("/shop",shopRouter);
 
 
 

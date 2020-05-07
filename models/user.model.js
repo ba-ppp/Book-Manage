@@ -7,7 +7,9 @@ var userSchema = mongoose.Schema({
     password: String,
     isAdmin: Boolean,
     wrongLogin: Number,
-    avatar: String
+    avatar: String,
+    name_shop: String,
+    shop: Array
 })
 
 var User = mongoose.model('User', userSchema, 'users');

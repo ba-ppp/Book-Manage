@@ -1,8 +1,7 @@
 extends ../layouts/common 
 block content
 
-    form(action="/shop/create", method= "POST")
+    form(action='shop/create/' + id,method= "POST")
         label(for='name') Name
         input(name="name")
-    
-    button Create
+        button Create

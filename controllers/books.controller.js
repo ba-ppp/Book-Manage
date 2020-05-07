@@ -24,10 +24,10 @@ module.exports.delete = async (req, res) => {
   await Book.findOneAndDelete({_id: id});
   res.redirect('/books');
 };
-module.exports.addPost = (req, res) => {
+module.exports.addPost = async (req, res) => {
   var book = req.body;
   
-  db.get("books").push(book).write();
+  await Book.create(book);
   res.redirect('/books');
 };
 
